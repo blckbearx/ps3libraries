@@ -10,7 +10,7 @@ wget --continue http://downloads.xiph.org/releases/ogg/libogg-${VER}.tar.gz
 rm -Rf libogg-${VER} && tar xfz libogg-${VER}.tar.gz && cd libogg-${VER}
 
 ## Replace config.guess and config.sub
-cp ../config.guess ../config.sub .
+cp ../../config.guess ../../config.sub .
 
 ## Create the build directory.
 mkdir build-ppu && cd build-ppu

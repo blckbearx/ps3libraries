@@ -6,15 +6,11 @@ VERSION=7.64.1
 ## Download the source code.
 wget --continue http://curl.haxx.se/download/curl-${VERSION}.tar.gz
 
-## Download an up-to-date config.guess and config.sub
-if [ ! -f config.guess ]; then wget --continue http://cgit.git.savannah.gnu.org/cgit/config.git/plain/config.guess; fi
-if [ ! -f config.sub ]; then wget --continue http://cgit.git.savannah.gnu.org/cgit/config.git/plain/config.sub; fi
-
 ## Unpack the source code.
 rm -Rf curl-${VERSION} && tar xfvz curl-${VERSION}.tar.gz && cd curl-${VERSION}
 
 ## Replace config.guess and config.sub
-cp ../config.guess ../config.sub .
+cp ../../config.guess ../../config.sub .
 
 ## Create the build directory.
 mkdir build-ppu && cd build-ppu

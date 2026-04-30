@@ -37,12 +37,12 @@ PLATFORM="PS3"
 wget --continue --no-check-certificate https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-${VERSION}/mbedtls-${VERSION}.tar.bz2
 
 ## Unpack the source code.
-rm -Rf mbedtls-${VERSION} && tar xfvz mbedtls-${VERSION}.tar.bz2 && cd mbedtls-${VERSION}
+rm -Rf mbedtls-${VERSION} && tar xfv mbedtls-${VERSION}.tar.bz2 && cd mbedtls-${VERSION}
 
 echo "Building mbedTLS ${VERSION} for ${PLATFORM} ${ARCH}"
 
 echo "Patching Makefile..."
-patch -p1 < ../patches/mbedtls-${VERSION}.patch
+patch -p1 < ../../patches/mbedtls-${VERSION}.patch
 
 TOOLCHAIN_PATH=$PS3DEV/ppu/bin/powerpc64-ps3-elf-
 export CC=${TOOLCHAIN_PATH}gcc
